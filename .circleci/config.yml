@@ -1,0 +1,19 @@
+version: 2.1
+
+jobs:
+  test: 
+    docker:
+      - image: cimg/python:3.10.2
+    steps:
+      - checkout
+      - run:
+          name: Install pylint
+          command:  pip install pylint
+      - run: 
+          name: Test the code
+          command:  pylint hello.py
+
+workflows:
+  sample: 
+    jobs:
+      - test
