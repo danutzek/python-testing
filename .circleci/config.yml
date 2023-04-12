@@ -32,11 +32,10 @@ jobs:
       - run:
           name: Install pylint
           # This assumes pytest is installed via the install-package step above
-          command: | 
-                pip install pylint
-      - run: Test the code
-          command: | 
-                pylint hello.py
+          command:  pip install pylint
+      - run: 
+          name: Test the code
+          command:  pylint hello.py
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
